@@ -1,0 +1,55 @@
+<div class="flex justify-center min-h-screen">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex justify-center flex-col">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Company Name</mat-label>
+        <input matInput type="text" id="companyName" name="companyName" formControlName="companyName" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Telephone Number</mat-label>
+        <input matInput type="tel" id="telephone" name="telephone" formControlName="telephone" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Employees</mat-label>
+        <mat-select id="employees" name="employees" formControlName="employees" required>
+          <mat-option *ngFor="let option of employeeRanges" [value]="option">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>CoC Number</mat-label>
+        <input matInput type="text" id="cocNumber" name="cocNumber" formControlName="coc" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>VAT Number</mat-label>
+        <input matInput type="text" id="vatNumber" name="vatNumber" formControlName="vat" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>IBAN Number</mat-label>
+        <input matInput type="text" id="ibanNumber" name="ibanNumber" formControlName="iban" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Budget</mat-label>
+        <input matInput type="number" id="budget" name="budget" formControlName="budget">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput id="description" name="description" formControlName="description" required></textarea>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button type="submit">Save</button>
+  </form>
+</div>
