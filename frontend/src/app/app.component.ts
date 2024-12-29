@@ -29,14 +29,14 @@ export class AppComponent {
   constructor(private fb: FormBuilder, private apiService: ApiService) {
 
     this.form = this.fb.group({
-      companyName: ['Roman Kost', Validators.required],
-      telephone: ['064066963', Validators.required],
+      companyName: ['', Validators.required],
+      telephone: ['', Validators.required],
       employees: ['', Validators.required],
-      coc: ['00001111', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
-      vat: ['NL00001111', [Validators.required, Validators.pattern(/^[A-Z]{2}\d{8,12}$/)]],
-      iban: ['NL46ABNA0421813253', [Validators.required, Validators.pattern(/^NL\d{2}[A-Z]{4}\d{10}$/)]],
-      budget: ['2323'],
-      description: ['Hallo ik ben roman', [Validators.required, Validators.maxLength(1000)]]
+      coc: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+      vat: ['', [Validators.required, Validators.pattern(/^[A-Z]{2}\d{8,12}$/)]],
+      iban: ['', [Validators.required, Validators.pattern(/^NL\d{2}[A-Z]{4}\d{10}$/)]],
+      budget: [''],
+      description: ['', [Validators.required, Validators.maxLength(1000)]]
     });
     }
   onSubmit() {
